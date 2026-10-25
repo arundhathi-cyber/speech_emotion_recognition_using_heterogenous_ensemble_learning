@@ -33,8 +33,8 @@ The model uses audio features including:
 ## Setup
 
 ```bash
-git clone [https://github.com/your-username/speech-emotion-recognition.git](https://github.com/your-username/speech-emotion-recognition.git)
-cd speech-emotion-recognition
+git clone https://github.com/arundhathi-cyber/speech_emotion_recognition_using_heterogenous_ensemble_learning.git
+cd speech_emotion_recognition_using_heterogenous_ensemble_learning
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
