@@ -40,13 +40,13 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Download Data
+## Dataset
 
-Download the RAVDESS speech dataset and place the `.wav` files in:
+This project uses the [RAVDESS Emotional Speech Audio dataset](https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio).
 
-```text
+Download it from Kaggle and extract the audio files into:
+
 data/ravdess/
-```
 
 ## Train Classical Models
 
