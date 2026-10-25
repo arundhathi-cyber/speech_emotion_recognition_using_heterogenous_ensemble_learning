@@ -1,8 +1,8 @@
-# Speech Emotion Recognition
+# Speech Emotion Recognition using Heterogeneous Ensemble Learning
 
-This project classifies speech recordings into eight emotions using the RAVDESS dataset.
+This project performs speech emotion recognition on the RAVDESS dataset using audio features such as MFCCs, chroma, Mel-spectrograms, spectral contrast, and tonnetz. It compares classical machine-learning models and a deep neural network for eight-class emotion classification.
 
-## Emotions
+## Emotions Recognized
 
 - Neutral
 - Calm
@@ -13,54 +13,87 @@ This project classifies speech recordings into eight emotions using the RAVDESS 
 - Disgust
 - Surprised
 
-## Features
+## Dataset
 
-The model uses audio features including:
+This project uses the [RAVDESS Emotional Speech Audio dataset](https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio).
+
+Download the dataset from Kaggle and extract the `.wav` files into:
+
+```text
+data/ravdess/
+```
+
+The expected structure is:
+
+```text
+data/
+└── ravdess/
+    ├── Actor_01/
+    ├── Actor_02/
+    ├── Actor_03/
+    └── ...
+```
+
+The dataset is not included in this repository because of its size.
+
+## Features Extracted
+
+Each audio file is converted into a fixed-size feature vector using:
 
 - MFCCs
-- Chroma
-- Mel spectrogram
+- Chroma features
+- Mel spectrogram features
 - Spectral contrast
-- Tonnetz
+- Tonnetz features
 
-## Models
+## Models Used
 
-- Support Vector Machine
+- Support Vector Machine (SVM)
 - Random Forest
-- K-Nearest Neighbors
-- Deep Neural Network
+- K-Nearest Neighbors (KNN)
+- Deep Neural Network (DNN)
 
-## Setup
+## Project Structure
+
+```text
+.
+├── README.md
+├── requirements.txt
+├── .gitignore
+└── src/
+    ├── config.py
+    ├── feature_extraction.py
+    ├── dataset.py
+    ├── train_classical.py
+    ├── train_dnn.py
+    └── evaluate.py
+```
+
+## Installation
 
 ```bash
-git clone https://github.com/arundhathi-cyber/speech_emotion_recognition_using_heterogenous_ensemble_learning.git
+git clone [https://github.com/arundhathi-cyber/speech_emotion_recognition_using_heterogenous_ensemble_learning.git](https://github.com/arundhathi-cyber/speech_emotion_recognition_using_heterogenous_ensemble_learning.git)
 cd speech_emotion_recognition_using_heterogenous_ensemble_learning
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Dataset
+## Training
 
-This project uses the [RAVDESS Emotional Speech Audio dataset](https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio).
-
-Download it from Kaggle and extract the audio files into:
-
-data/ravdess/
-
-## Train Classical Models
+After placing the RAVDESS dataset in `data/ravdess/`, train the classical models:
 
 ```bash
 python -m src.train_classical
 ```
 
-## Train DNN
+Train the deep neural network:
 
 ```bash
 python -m src.train_dnn
 ```
 
-## Evaluate
+Evaluate the trained model and generate plots:
 
 ```bash
 python -m src.evaluate
@@ -73,4 +106,6 @@ python -m src.evaluate
 | SVM | 95.07% |
 | Random Forest | 91.94% |
 | KNN | 73.85% |
-| DNN | ~95–96% |
+| DNN | 95–96% |
+
+These results were obtained from the original Kaggle notebook.
