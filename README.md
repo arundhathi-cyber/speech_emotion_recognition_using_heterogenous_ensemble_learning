@@ -74,7 +74,3 @@ python -m src.evaluate
 | Random Forest | 91.94% |
 | KNN | 73.85% |
 | DNN | ~95–96% |
-
-## Notes
-
-The current evaluation uses random splits, so results may be optimistic because clips from the same speaker can appear in both training and validation data.
