@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+data/
+models/*.pt
+models/*.joblib
+*.wav
+*.mp3
+
+figures/*.png
